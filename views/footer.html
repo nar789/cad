@@ -1,0 +1,68 @@
+<div
+  class="shadow-lg"
+  style="
+    height: 80px;
+    width: 100%;
+    background-color: #b89f7f;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  "
+>
+  <div
+    id="b1"
+    style="display: flex; flex-direction: column; text-align: center"
+    onclick="location.href='/'"
+  >
+    <div>
+      <img src="/assets/img/home.png" width="35.3" height="30.9" />
+    </div>
+    <span style="color: white; font-size: 12px; margin-top: 7px">홈</span>
+  </div>
+
+  <div
+    id="b2"
+    style="display: flex; flex-direction: column; text-align: center"
+    onclick="location.href='/my'"
+  >
+    <div class="w-100">
+      <img src="/assets/img/calc.png" width="35.3" height="30.9" />
+    </div>
+    <span style="color: white; font-size: 12px; margin-top: 7px">내 견적</span>
+  </div>
+
+  <div
+    id="b3"
+    style="display: flex; flex-direction: column; text-align: center"
+    onclick="location.href='/history'"
+  >
+    <div>
+      <img src="/assets/img/list.png" width="35.3" height="30.9" />
+    </div>
+    <span style="color: white; font-size: 12px; margin-top: 7px">이용예약</span>
+  </div>
+
+  <div
+    id="b4"
+    style="display: flex; flex-direction: column; text-align: center"
+    onclick="location.href='/setting'"
+  >
+    <div>
+      <img src="/assets/img/setting.png" width="35.3" height="30.9" />
+    </div>
+    <span style="color: white; font-size: 12px; margin-top: 7px">설정</span>
+  </div>
+</div>
+<script>
+  function bottom() {
+    $("#b1").css("opacity", "0.5");
+    $("#b2").css("opacity", "0.5");
+    $("#b3").css("opacity", "0.5");
+    $("#b4").css("opacity", "0.5");
+  }
+
+  bottom();
+</script>

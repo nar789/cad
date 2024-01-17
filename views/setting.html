@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>cad</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <!--fontawesome-->
+    <link rel="stylesheet" href="/assets/fonts/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/css/brands.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/css/solid.min.css" />
+  </head>
+  <body>
+    <%-include('head.html')%>
+    <div
+      style="
+        overflow: scroll;
+        margin-top: 60px;
+        margin-bottom: 80px;
+        padding: 20px;
+      "
+    >
+      <p>설정 작업중 <i class="fa-solid fa-hammer"></i></p>
+    </div>
+    <script src="/assets/jquery/jquery.min.js"></script>
+    <%-include('footer.html')%>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      $("#b4").css("opacity", "1");
+    </script>
+  </body>
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+    }
+  </style>
+</html>

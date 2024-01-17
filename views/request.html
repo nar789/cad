@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>cad</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <!--fontawesome-->
+    <link rel="stylesheet" href="/assets/fonts/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/css/brands.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/css/solid.min.css" />
+  </head>
+  <body>
+    <div
+      class="shadow-sm"
+      style="
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        top: 0;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        background-color: white;
+      "
+    >
+      <span
+        style="font-weight: bold; font-size: 20px; color: #886940"
+        onclick="history.back()"
+        ><i class="fa-solid fa-angle-left"></i>&nbsp;견적 요청하기</span
+      >
+    </div>
+    <div
+      style="
+        overflow: scroll;
+        margin-top: 60px;
+        margin-bottom: 80px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+      "
+    >
+      <div style="margin-top: 30px"></div>
+      <div>
+        <label style="font-weight: bold">현장 주소 입력</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="현장 주소를 입력해주세요."
+        />
+      </div>
+      <div class="mt-3">
+        <label
+          style="
+            display: flex;
+            justify-content: space-between;
+            padding-right: 10px;
+          "
+          ><span style="font-weight: bold">집 내부 사진</span>
+          <div
+            style="
+              padding-left: 10px;
+              padding-right: 10px;
+              background-color: #b89f7f;
+              color: white;
+              border-radius: 10px;
+              font-size: 12px;
+            "
+            onclick="$('#upload').click()"
+          >
+            불러오기
+          </div></label
+        >
+        <input type="file" class="form-control d-none" id="upload" />
+        <div style="display: flex; margin-top: 10px">
+          <img
+            style="margin-right: 10px"
+            src="/assets/img/apt.png"
+            width="160"
+            height="110"
+          />
+          <img src="/assets/img/apt.png" width="160" height="110" />
+        </div>
+      </div>
+      <div class="mt-3">
+        <label style="font-weight: bold">시공 예산</label>
+        <input type="range" class="form-range" />
+        <div style="text-align: center; width: 100%; font-weight: bold">
+          <span>100만원대</span>
+        </div>
+      </div>
+      <div class="mt-3">
+        <label style="font-weight: bold">시공 공간 종류</label>
+        <div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-around;
+              margin-top: 10px;
+            "
+          >
+            <div>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="space"
+                checked
+              />
+              <label class="form-check-label"> 아파트 </label>
+            </div>
+            <div>
+              <input class="form-check-input" type="radio" name="space" />
+              <label class="form-check-label"> 오피스텔</label>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-around;
+              margin-top: 10px;
+            "
+          >
+            <div>
+              <input class="form-check-input" type="radio" name="space" />
+              <label class="form-check-label"> 빌라</label>
+            </div>
+            <div>
+              <input class="form-check-input" type="radio" name="space" />
+              <label class="form-check-label"> 단독주택</label>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-around;
+              margin-top: 10px;
+            "
+          >
+            <div>
+              <input class="form-check-input" type="radio" name="space" />
+              <label class="form-check-label"> 상업공간</label>
+            </div>
+            <div style="visibility: hidden">
+              <input class="form-check-input" type="radio" name="space" />
+              <label class="form-check-label"> 상업공간</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3">
+        <label
+          style="
+            display: flex;
+            justify-content: space-between;
+            padding-right: 10px;
+          "
+          ><span style="font-weight: bold">캐드 이미지</span>
+          <div
+            style="
+              padding-left: 10px;
+              padding-right: 10px;
+              background-color: #b89f7f;
+              color: white;
+              border-radius: 10px;
+              font-size: 12px;
+            "
+            onclick="$('#upload2').click()"
+          >
+            불러오기
+          </div></label
+        >
+        <input type="file" class="form-control d-none" id="upload2" />
+        <div style="display: flex; margin-top: 10px">
+          <img
+            style="margin-right: 10px"
+            src="/assets/img/cad.png"
+            width="160"
+            height="110"
+          />
+          <img src="/assets/img/cad.png" width="160" height="110" />
+        </div>
+      </div>
+      <div class="mt-3">
+        <label style="font-weight: bold">전달할 내용을 적어주세요</label>
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+      <div class="mt-3">
+        <label style="font-weight: bold"
+          >성함과 핸드폰 번호를 입력해주세요</label
+        >
+        <input type="text" class="form-control" placeholder="성함" />
+        <div style="display: flex">
+          <select class="form-select form-select-sm" style="max-width: 80px">
+            <option selected>010</option>
+            <option value="1">012</option>
+            <option value="2">011</option>
+            <option value="3">018</option>
+          </select>
+          <input type="text" class="form-control" placeholder="폰번호" />
+        </div>
+      </div>
+      <div class="mt-3">
+        <label style="font-weight: bold">통화 희망 시간</label>
+        <div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-around;
+              margin-top: 10px;
+            "
+          >
+            <div>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="space"
+                checked
+              />
+              <label class="form-check-label"> 언제든 괜찮아요</label>
+            </div>
+            <div>
+              <input class="form-check-input" type="radio" name="space" />
+              <label class="form-check-label"> 아침</label>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-around;
+              margin-top: 10px;
+            "
+          >
+            <div>
+              <input class="form-check-input" type="radio" name="space" />
+              <label class="form-check-label"> 오전</label>
+            </div>
+            <div>
+              <input class="form-check-input" type="radio" name="space" />
+              <label class="form-check-label"> 오후</label>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-around;
+              margin-top: 10px;
+            "
+          >
+            <div>
+              <input class="form-check-input" type="radio" name="space" />
+              <label class="form-check-label"> 저녁</label>
+            </div>
+            <div>
+              <input class="form-check-input" type="radio" name="space" />
+              <label class="form-check-label"> 직집입력</label>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5" id="btn1">
+          <img src="/assets/img/request_btn.png" />
+        </div>
+      </div>
+    </div>
+    <script src="/assets/jquery/jquery.min.js"></script>
+    <%-include('footer.html')%>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      //$("#b2").css("opacity", "1");
+
+      for (var i = 1; i <= 1; i++) {
+        const id = "#btn" + i;
+        $(id).bind("touchstart", (e) => {
+          $(id).css("opacity", 0.5);
+        });
+        $(id).bind("touchend", (e) => {
+          $(id).css("opacity", 1);
+        });
+      }
+    </script>
+  </body>
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+    }
+  </style>
+</html>

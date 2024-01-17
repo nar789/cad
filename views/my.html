@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>cad</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <!--fontawesome-->
+    <link rel="stylesheet" href="/assets/fonts/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/css/brands.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/css/solid.min.css" />
+  </head>
+  <body>
+    <%-include('head.html')%>
+    <div style="overflow: scroll; margin-top: 60px; margin-bottom: 80px">
+      <div
+        style="
+          background-color: #f0dec7;
+          height: 160px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          padding-left: 20px;
+        "
+        class="shadow"
+      >
+        <div style="margin-right: 10px">
+          <img
+            src="/assets/img/apt.png"
+            width="110"
+            height="110"
+            style="border: #898989 1px solid; border-radius: 20px"
+          />
+        </div>
+        <div style="display: flex; flex-direction: column">
+          <div
+            id="tag1"
+            style="
+              background-color: white;
+              padding: 1px;
+              margin-bottom: 5px;
+              border-radius: 10px;
+              font-size: 12px;
+              font-weight: bold;
+              color: #898989;
+              text-align: center;
+              width: 60px;
+            "
+          >
+            매칭중
+          </div>
+          <div>
+            <span style="font-weight: bold">서울시 성동구</span>
+          </div>
+          <div>
+            <sapn style="font-size: 13px; color: #898989"
+              >아파트 / 400만원대</sapn
+            >
+          </div>
+          <div
+            id="btn1"
+            style="
+              margin-top: 10px;
+              background-color: #b89f7f;
+              padding-left: 30px;
+              padding-right: 30px;
+              padding-top: 5px;
+              padding-bottom: 7px;
+              border-radius: 20px;
+              color: white;
+              font-size: 13px;
+              text-align: center;
+            "
+          >
+            견적요정 정보보기
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          margin-top: 10px;
+          background-color: #f9f6f3;
+          height: 160px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          padding-left: 20px;
+        "
+        class="shadow"
+      >
+        <div style="margin-right: 10px">
+          <img
+            src="/assets/img/shop.png"
+            width="110"
+            height="110"
+            style="border: #898989 1px solid; border-radius: 20px"
+          />
+        </div>
+        <div style="display: flex; flex-direction: column">
+          <div
+            id="tag2"
+            style="
+              background-color: white;
+              padding: 1px;
+              margin-bottom: 5px;
+              border-radius: 10px;
+              font-size: 12px;
+              font-weight: bold;
+              color: #898989;
+              text-align: center;
+              width: 60px;
+            "
+          >
+            매칭중
+          </div>
+          <div>
+            <span style="font-weight: bold">채움디자인</span>
+          </div>
+          <div>
+            <sapn style="font-size: 13px; color: #898989"
+              >작업 <b>20</b>건 리뷰 <b>200+</b>건
+              <span style="color: #ff6813"
+                ><i class="fa-solid fa-star"></i
+              ></span>
+              4.7</sapn
+            >
+          </div>
+          <div
+            id="btn2"
+            style="
+              margin-top: 10px;
+              background-color: #b89f7f;
+              padding-left: 30px;
+              padding-right: 30px;
+              padding-top: 5px;
+              padding-bottom: 7px;
+              border-radius: 20px;
+              color: white;
+              font-size: 13px;
+              text-align: center;
+            "
+            onclick="location.href='tel:010-1234-1234'"
+          >
+            전화화기
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          width: 100%;
+          height: 80px;
+          background-color: #f9f6f3;
+          margin-top: 10px;
+          margin-bottom: 30px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          padding-left: 20px;
+          padding-right: 20px;
+        "
+        class="shadow"
+      >
+        <div>
+          <div style="font-weight: bold; font-size: 17px">리뷰작성</div>
+          <div style="font-size: 14px">이용 완료 후 5주 동안만 가능</div>
+        </div>
+        <div>
+          <img id="btn3" src="/assets/img/write.png" width="88" height="59" />
+        </div>
+      </div>
+    </div>
+    <script src="/assets/jquery/jquery.min.js"></script>
+    <%-include('footer.html')%>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      $("#b2").css("opacity", "1");
+
+      for (var i = 1; i <= 3; i++) {
+        const id = "#btn" + i;
+        $(id).bind("touchstart", (e) => {
+          $(id).css("opacity", 0.5);
+        });
+        $(id).bind("touchend", (e) => {
+          $(id).css("opacity", 1);
+        });
+      }
+
+      function tagStart(id) {
+        $("#tag" + id).fadeTo(
+          "slow",
+          $("#tag" + id).css("opacity") % 1 == 0 ? 0.1 : 1.0,
+          () => {
+            tagStart(id);
+          }
+        );
+      }
+      tagStart(1);
+      tagStart(2);
+    </script>
+  </body>
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+    }
+  </style>
+</html>
